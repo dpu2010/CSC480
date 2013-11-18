@@ -1,0 +1,29 @@
+Tables:
+	->Classes
+	->Tasks
+
+TaskTable.java
+--------------
+	INT id auto incr PRIMARY KEY
+	VARCHAR2 name not null
+	INT classId FOREIGN KEY
+	DATE dueDate
+	DATE startDate
+
+ClassTable.java
+---------------
+	INT id auto incr PRIMARY KEY
+	VARCHAR2 name not null
+	FLOAT avg
+
+Database: StudyHelpersDB
+	-> StudyHelperContentProvider.java
+
+
+To address:
+-----------
+	Database
+	Content Provider
+	Cursor Adapter
+	Cursor on Table iterator
+	Tables
