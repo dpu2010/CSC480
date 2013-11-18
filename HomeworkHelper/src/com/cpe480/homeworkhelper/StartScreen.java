@@ -1,5 +1,7 @@
 package com.cpe480.homeworkhelper;
 
+import java.util.ArrayList;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -8,8 +10,9 @@ import android.widget.Spinner;
 
 public class StartScreen extends Activity {
 
-	EditText assignmentText;
-	Spinner assignmentCategory;
+	protected EditText assignmentText;
+	protected Spinner assignmentCategory;
+	protected ArrayList<Task> taskList;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +20,10 @@ public class StartScreen extends Activity {
 		setContentView(R.layout.layout_startscreen);
 		
 		
+		
+	}
+	
+	protected void initLayout() {
 		
 	}
 
