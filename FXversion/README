@@ -1,3 +1,30 @@
 This directory holds the source for the last-minute project change.
 We will design a laptop or desktop application using FX instead of
 deploying on Android.
+
+"HomeworkHelper" is the project folder created by NetBeans. To configure
+git with NetBeans and import the project, follow these steps:
+
+1. In NetBeans, click Team -> Git -> Clone
+2. Clone from the HTTPS link provided by the Git repositor web page.
+3. Check the box requesting for NetBeans to search the repository for
+      an existing project.
+4. Finish the clone and open the project.
+
+To poll the most recent source files from the repository:
+
+1. Click Team -> Remote -> Pull
+2. Choose "Select Configured Git Repository Location:"
+3. Poll the master branch.
+
+To commit your changes:
+
+1. Right-click HomeworkHelper in the Projects pane in NetBeans.
+2. Click Git -> Commit...
+3. Add the commit message describing what changes you made.
+
+To push your changes:
+
+1. Click Team -> Remote -> Push...
+2. Choose "Select Configured Git Repository Location:"
+3. Push to the master branch.
