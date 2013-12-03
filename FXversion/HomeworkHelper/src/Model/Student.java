@@ -20,4 +20,8 @@ public class Student {
         courseDB = new ArrayList<Course>();
     }
     
+    public ArrayList<Course> getCourseDataBase() {
+        return courseDB;
+    }
+    
 }

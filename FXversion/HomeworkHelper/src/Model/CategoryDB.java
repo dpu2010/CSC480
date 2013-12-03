@@ -22,4 +22,8 @@ class CategoryDB {
         
     }
     
+    public ArrayList<Category> getCategories() {
+        return categories;
+    }
+    
 }
