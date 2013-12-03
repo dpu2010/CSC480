@@ -12,16 +12,29 @@ package Model;
  */
 class Course {
     
-    CategoryDB categories;
-    TaskDB tasks;
-    String name;
+    private CategoryDB categories;
+    private TaskDB tasks;
+    private String name;
     
     public Course(String name) {
-        
         this.categories = new CategoryDB();
         this.tasks = new TaskDB();
         this.name = name;
-        
     }
     
+    public CategoryDB getCategoryDatabase() {
+        return categories;
+    }
+    
+    public TaskDB getTaskDatabase() {
+        return tasks;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String n) {
+        name = n;
+    }
 }

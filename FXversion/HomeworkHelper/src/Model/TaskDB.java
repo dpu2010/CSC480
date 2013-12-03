@@ -9,15 +9,14 @@ package Model;
 import java.util.ArrayList;
 
 /**
- *
+ * @author Tyler Kowallis
  * @author kylehodgkinson
  */
 class TaskDB {
     
-    ArrayList<Task> tasks;
+    private ArrayList<Task> tasks;
     
     public TaskDB() {
         this.tasks = new ArrayList<Task>();
-    }
-    
+    }    
 }
