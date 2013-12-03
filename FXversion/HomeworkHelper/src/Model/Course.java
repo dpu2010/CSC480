@@ -7,7 +7,7 @@
 package Model;
 
 /**
- *
+ * @author Tyler Kowallis
  * @author kylehodgkinson
  */
 class Course {
