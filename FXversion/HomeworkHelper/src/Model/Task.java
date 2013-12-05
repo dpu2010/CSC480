@@ -44,6 +44,8 @@ public class Task extends Observable {
 
     public void setScore(Double s) {
         score = s;
+        setChanged();
+        notifyObservers();
     }
 
     public String getSuggestedTime() {

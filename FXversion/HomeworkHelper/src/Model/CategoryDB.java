@@ -35,6 +35,8 @@ public class CategoryDB extends Observable implements Observer{
     public void addCategory(Category cat) {
         this.categories.add(cat);
         cat.addObserver(this);
+        setChanged();
+        notifyObservers();
     }
 
     @Override

@@ -27,36 +27,35 @@ public class HomeworkHelper extends Application {
         primaryStage.setTitle("Heavy Leather Inc.");
 
         student = new Student();
+
+        /*Course softDev = new Course("307");
+         student.getCourseDataBase().addCourse(softDev);
+         Course artInt = new Course("480");
+         Course intro = new Course("101");
         
-        Course softDev = new Course("307");
-        student.getCourseDataBase().addCourse(softDev);
-        /*Course artInt = new Course("480");
-        Course intro = new Course("101");
+         student.getCourseDataBase().addCourse(softDev);
+         student.getCourseDataBase().addCourse(artInt);
+         student.getCourseDataBase().addCourse(intro);
         
-        student.getCourseDataBase().addCourse(softDev);
-        student.getCourseDataBase().addCourse(artInt);
-        student.getCourseDataBase().addCourse(intro);
+         Category programs307 = new Category("Programs", 95.0, softDev.getTaskDatabase());
+         Category labs307 = new Category("Labs", 80.0, softDev.getTaskDatabase());
+         Category midterms307 = new Category("Midterms", 90.0, softDev.getTaskDatabase());
         
-        Category programs307 = new Category("Programs", 95.0, softDev.getTaskDatabase());
-        Category labs307 = new Category("Labs", 80.0, softDev.getTaskDatabase());
-        Category midterms307 = new Category("Midterms", 90.0, softDev.getTaskDatabase());
-        
-        softDev.getCategoryDatabase().addCategory(midterms307);
-        softDev.getCategoryDatabase().addCategory(programs307);
-        softDev.getCategoryDatabase().addCategory(labs307);
+         softDev.getCategoryDatabase().addCategory(midterms307);
+         softDev.getCategoryDatabase().addCategory(programs307);
+         softDev.getCategoryDatabase().addCategory(labs307);
                 
-        Task program1 = new Task("Program 1", programs307);
-        Task program2 = new Task("Program 2", programs307);
-        Task lab1 = new Task("Lab 1", labs307);
-        Task lab2 = new Task("Lab 2", labs307);
-        Task midterm = new Task("Midterm", midterms307);
+         Task program1 = new Task("Program 1", programs307);
+         Task program2 = new Task("Program 2", programs307);
+         Task lab1 = new Task("Lab 1", labs307);
+         Task lab2 = new Task("Lab 2", labs307);
+         Task midterm = new Task("Midterm", midterms307);
         
-        programs307.addTask(program1);
-        programs307.addTask(program2);
-        labs307.addTask(lab1);
-        labs307.addTask(lab2);
-        midterms307.addTask(midterm);*/
-                
+         programs307.addTask(program1);
+         programs307.addTask(program2);
+         labs307.addTask(lab1);
+         labs307.addTask(lab2);
+         midterms307.addTask(midterm);*/
         //Setup Table
         BorderPane root = new BorderPane();
         root.setCenter(new mainUI(student));
@@ -65,12 +64,15 @@ public class HomeworkHelper extends Application {
 
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        Stage stage = new Stage();
+        CourseDialog newCourse = new CourseDialog(stage, student);
+        newCourse.buildCourseDialog();
+        stage.show();
     }
-    
+
     public static void main(String[] args) {
         launch(args);
     }
-
-    
 
 }
