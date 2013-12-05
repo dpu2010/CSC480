@@ -16,25 +16,27 @@ import javafx.collections.ObservableList;
  *
  * @author kylehodgkinson
  */
-public class CategoryDB extends Observable implements Observer{
+public class CourseDB extends Observable implements Observer{
     
-    ArrayList<Category> categories;
+    ArrayList<Course> courseDB;
     
-    public CategoryDB(TaskDB courseList) {
-       categories = new ArrayList<Category>(); 
+    public CourseDB() {
+        courseDB = new ArrayList<Course>();
     }
     
-    public ArrayList<Category> getCategories() {
-        return categories;
+    public ObservableList<Course> getObsCourseList() {
+        return FXCollections.observableArrayList(this.courseDB);
     }
     
-    public ObservableList<Category> getObsCatList() {
-        return FXCollections.observableArrayList(this.categories);
+    public ArrayList<Course> getCourseList() {
+        return this.courseDB;
     }
     
-    public void addCategory(Category cat) {
-        this.categories.add(cat);
-        cat.addObserver(this);
+    public void addCourse(Course course) {
+        courseDB.add(course);
+        course.addObserver(this);
+        setChanged();
+        notifyObservers();
     }
 
     @Override
@@ -42,5 +44,4 @@ public class CategoryDB extends Observable implements Observer{
         setChanged();
         notifyObservers();
     }
-    
 }

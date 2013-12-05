@@ -3,60 +3,67 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Model;
+
+import java.util.Observable;
 
 /**
  * @author Tyler Kowallis
  * @author kylehodgkinson
  */
-class Task {
-    
+public class Task extends Observable {
+
     String name;
-    //Date dueDate;
-    String dueDate;
     Double score;
-    Double duration;
-    
-    public Task() {
-        name = null;
-        dueDate = null;
-    }
-    
-    public Task(String name, String dueDate) {
+    Double timeSpent;
+    String suggestedTime;
+    Category cat;
+
+    public Task(String name, Category cat) {
         this.name = name;
-        this.dueDate = dueDate;
+        this.cat = cat;
+        this.addObserver(cat);
+        setSuggestedTime(cat);
     }
-    
+
     public String getName() {
         return name;
     }
-    
+
+    public String getCatName() {
+        return cat.getName();
+    }
+
     public void setName(String n) {
         name = n;
     }
-    
-    public String getDueDate() {
-        return dueDate;
-    }
-    
-    public void setDueDate(String d) {
-        dueDate = d;
-    }
-    
+
     public Double getScore() {
         return score;
     }
-    
+
     public void setScore(Double s) {
         score = s;
     }
-    
-    public Double getDuration() {
-        return duration;
+
+    public String getSuggestedTime() {
+        return suggestedTime;
     }
-    
-    public void setDuration(Double d) {
-        duration = d;
+
+    public Double getTimeSpent() {
+        return timeSpent;
+    }
+
+    public void setSuggestedTime(Category cat) {
+        if (cat.getCatTasks().isEmpty()) {
+            this.suggestedTime = "---";
+        } else {
+            TimeCalculator cal = new TimeCalculator(cat);
+            this.suggestedTime = cal.calculateTime();
+        }
+    }
+
+    public void setTimeSpent(Double d) {
+        timeSpent = d;
     }
 }

@@ -7,16 +7,28 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
 
 /**
  * @author Tyler Kowallis
  * @author kylehodgkinson
  */
-class TaskDB {
+public class TaskDB extends Observable{
     
-    private ArrayList<Task> tasks;
+    List<Task> tasks;
     
     public TaskDB() {
-        this.tasks = new ArrayList<Task>();
-    }    
+        tasks = new ArrayList<>();
+    }
+    
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    void addTask(Task task) {
+        this.tasks.add(task);
+        setChanged();
+        notifyObservers();
+    }
 }

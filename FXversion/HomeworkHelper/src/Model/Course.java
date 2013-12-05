@@ -6,20 +6,25 @@
 
 package Model;
 
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  * @author Tyler Kowallis
  * @author kylehodgkinson
  */
-class Course {
+public class Course extends Observable implements Observer{
     
-    private CategoryDB categories;
-    private TaskDB tasks;
-    private String name;
+    CategoryDB categories;
+    TaskDB tasks;
+    String name;
     
     public Course(String name) {
-        this.categories = new CategoryDB();
-        this.tasks = new TaskDB();
         this.name = name;
+        this.tasks = new TaskDB();
+        tasks.addObserver(this);
+        this.categories = new CategoryDB(tasks);
+        categories.addObserver(this);
     }
     
     public CategoryDB getCategoryDatabase() {
@@ -33,8 +38,10 @@ class Course {
     public String getName() {
         return name;
     }
-    
-    public void setName(String n) {
-        name = n;
+
+    @Override
+    public void update(Observable o, Object arg) {
+        setChanged();
+        notifyObservers();
     }
 }
